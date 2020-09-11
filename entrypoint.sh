@@ -9,16 +9,8 @@ fi
 REPONAME="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)"
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)"
 GHIO="${OWNER}.github.io"
-# target branch
-if [[ "$REPONAME" == "$GHIO" ]]; then
-  TARGET_BRANCH="master"
-else
-  TARGET_BRANCH="gh-pages"
-fi
-# build dir
-if [ -z "$BUILD_DIR" ]; then
-  BUILD_DIR="_site"
-fi
+TARGET_BRANCH="gh-pages"
+BUILD_DIR="_book"
 
 echo "### Started deploy to $GITHUB_REPOSITORY/$TARGET_BRANCH"
 
